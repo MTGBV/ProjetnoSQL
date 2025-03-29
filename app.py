@@ -24,7 +24,7 @@ collection = db["films"]
 st.title("Exploration de Films avec MongoDB")
 st.markdown("Cette application vous permet d'explorer une base de données de films.")
 
-menu = st.sidebar.selectbox("Sélectionner une section", ["MongoDB", "Analyse"])
+menu = st.sidebar.selectbox("Sélectionner une section", ["MongoDB", "Analyse", "Neo4j"])
 
 if menu == "MongoDB":
     st.header("Requêtes MongoDB")
@@ -138,3 +138,16 @@ if menu == "MongoDB":
 elif menu == "Analyse":
     st.header("Analyse des Données")
     # Code d'analyse des données ici
+
+
+elif menu == "Neo4j":
+    st.header("Chargement MongoDB → Neo4j")
+    if st.button("Exporter les films depuis MongoDB"):
+        from mongodb.mongo_to_neo4j import export_mongodb_films_for_neo4j
+        export_mongodb_films_for_neo4j()
+        st.success("Export MongoDB terminé")
+
+    if st.button("Importer dans Neo4j"):
+        from neo4j.neo4j_load import load_data_to_neo4j
+        load_data_to_neo4j()
+        st.success("Import Neo4j terminé")

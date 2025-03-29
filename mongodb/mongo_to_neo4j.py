@@ -1,29 +1,36 @@
-from py2neo import Graph
 from mongo_connection import get_mongo_connection
+import json
 
-# Connexion à Neo4j
-graph = Graph("neo4j+s://668f3c6c.databases.neo4j.io", auth=("neo4j", "XyMdTepNHjyG2vKTDTCRP07GzpUG7u0rW5aNNTIy2vQ"))  # Utilise tes informations d'authentification Neo4j
+def export_mongodb_films_for_neo4j(output_path="data/films_export.json"):
+    db = get_mongo_connection()
+    collection = db["films"]
 
-# Connexion à MongoDB
-db = get_mongo_connection()
-collection = db["films"]
+    result = collection.find({
+        "Actors": {"$exists": True, "$ne": ""},
+        "Director": {"$exists": True, "$ne": ""}
+    }, {
+        "_id": 1,
+        "title": 1,
+        "year": 1,
+        "Votes": 1,
+        "Revenue (Millions)": 1,
+        "rating": 1,
+        "Director": 1,
+        "Actors": 1
+    })
 
-# Fonction pour insérer des films, acteurs et réalisateurs dans Neo4j
-def insert_data_to_neo4j():
-    for film in collection.find():
-        # Créer un nœud Film
-        film_node = graph.merge({"title": film["title"]}, "Film", "title")
-        
-        # Ajouter des nœuds pour les acteurs
-        actors = film["Actors"].split(",")  # Les acteurs sont séparés par des virgules
-        for actor in actors:
-            actor_node = graph.merge({"name": actor.strip()}, "Actor", "name")
-            film_node.relationships.create("ACTED_IN", actor_node)
-        
-        # Ajouter un nœud pour le réalisateur
-        director = film["Director"]
-        director_node = graph.merge({"name": director}, "Director", "name")
-        film_node.relationships.create("DIRECTED", director_node)
+    cleaned = []
+    for doc in result:
+        cleaned.append({
+            "id": str(doc["_id"]),
+            "title": doc.get("title"),
+            "year": doc.get("year"),
+            "Votes": doc.get("Votes"),
+            "Revenue": doc.get("Revenue (Millions)"),
+            "rating": doc.get("rating"),
+            "director": doc.get("Director"),
+            "actors": [a.strip() for a in doc.get("Actors", "").split(",")]
+        })
 
-# Appeler la fonction pour insérer les données dans Neo4j
-insert_data_to_neo4j()
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(cleaned, f, indent=2)
