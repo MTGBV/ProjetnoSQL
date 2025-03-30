@@ -26,10 +26,16 @@ from neo4j_folder.neo4j_queries import (
     get_top_actors_by_director_diversity,
     recommend_films_by_genre,
     create_influence_relationships,
-    get_shortest_path_between_actors
+    get_shortest_path_between_actors,
+    get_films_same_genre_diff_directors,
+    get_genre_based_recommendations,
+    create_director_competition_relationships,
+    get_director_competitions,
+    get_top_director_actor_collaborations
 )
 import matplotlib.pyplot as plt
 import seaborn as sns
+import networkx as nx
 from mongodb.mongo_connection import get_mongo_connection
 
 db = get_mongo_connection()
@@ -288,3 +294,72 @@ elif menu == "Neo4j":
                 st.warning("Aucun chemin trouvé entre ces deux acteurs.")
         else:
             st.warning("Veuillez entrer les deux noms.")
+
+    # Question 27 : Films avec mêmes genres mais réalisateurs différents
+    if st.button("Films similaires par genre mais réalisateurs différents"):
+        films = get_films_same_genre_diff_directors()
+        if films:
+            st.subheader("🎞️ Films ayant un genre en commun mais des réalisateurs différents")
+            for row in films:
+                st.markdown(f"- **{row['film1']}** (🎬 {row['director1']}) et **{row['film2']}** (🎬 {row['director2']}) — Genre : *{row['genre']}*")
+        else:
+            st.warning("Aucun résultat trouvé.")
+
+    # Question 28 : Recommandation de films par genre préféré d'un acteur
+    st.subheader("🎯 Recommander des films à un acteur")
+
+    actor_input = st.text_input("Entrez le nom d’un acteur pour obtenir des recommandations basées sur ses genres préférés")
+
+    if st.button("Recommander des films"):
+        if actor_input:
+            recs = get_genre_based_recommendations(actor_input)
+            if recs:
+                st.success(f"🎬 Recommandations pour **{actor_input}** :")
+                for r in recs:
+                    st.markdown(f"- **{r['title']}** ({r['year']}) — Genre : *{r['genre']}*")
+            else:
+                st.warning("Aucune recommandation trouvée.")
+        else:
+            st.info("Veuillez entrer un nom d'acteur.")
+
+    # Question 29 : Créer les relations de concurrence entre réalisateurs
+    if st.button("Créer relations de concurrence entre réalisateurs"):
+        create_director_competition_relationships()
+        st.success("Relations de concurrence entre réalisateurs créées avec succès !")
+
+    # Visualiser les relations de concurrence entre réalisateurs
+    if st.button("Afficher les réalisateurs en concurrence"):
+        from neo4j_folder.neo4j_queries import get_director_competitions
+        edges = get_director_competitions()
+
+        if edges:
+            st.subheader("🎥 Réseaux de réalisateurs en concurrence")
+
+            
+
+            G = nx.DiGraph()
+            for edge in edges:
+                G.add_edge(edge["source"], edge["target"])
+
+            plt.figure(figsize=(12, 8))
+            pos = nx.spring_layout(G, k=0.5)
+            nx.draw(G, pos, with_labels=True, node_color="skyblue", node_size=1500, edge_color="gray", arrows=True)
+            st.pyplot(plt)
+        else:
+            st.info("Aucune relation de concurrence trouvée.")
+
+    #question 30
+    if st.button("Collaborations fréquentes réalisateur-acteur"):
+        from neo4j_folder.neo4j_connection import get_neo4j_driver
+        from neo4j_folder.neo4j_queries import get_top_director_actor_collaborations
+
+        driver = get_neo4j_driver()
+        result = get_top_director_actor_collaborations(driver)
+
+        if result:
+            st.subheader("🎬 Collaborations fréquentes réalisateur ↔️ acteur")
+            for row in result:
+                st.markdown(f"**{row['director']}** 🎥 **{row['actor']}** — {row['collaborations']} films — "
+                            f"💰 Moy. revenus: {row['avg_revenue']:.2f} M$ — ⭐ Moy. rating: {row['avg_rating']}")
+        else:
+            st.warning("Aucune collaboration fréquente trouvée.")

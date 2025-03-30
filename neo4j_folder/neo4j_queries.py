@@ -172,3 +172,72 @@ def get_shortest_path_between_actors(actor1, actor2):
     with driver.session() as session:
         result = session.run(query, actor1=actor1, actor2=actor2).single()
         return result["path"] if result else None
+    
+#question 27
+def get_films_same_genre_diff_directors():
+    query = """
+    MATCH (f1:Film)-[:HAS_GENRE]->(g:Genre)<-[:HAS_GENRE]-(f2:Film)
+    WHERE f1.id < f2.id AND f1.director <> f2.director
+    RETURN f1.title AS film1, f1.director AS director1,
+           f2.title AS film2, f2.director AS director2,
+           g.name AS genre
+    LIMIT 20
+    """
+    with driver.session() as session:
+        result = session.run(query)
+        return result.data()
+
+#question 28
+def get_genre_based_recommendations(actor_name):
+    query = """
+    MATCH (a:Actor {name: $actor_name})-[:ACTED_IN]->(:Film)-[:HAS_GENRE]->(g:Genre)
+    WITH a, COLLECT(DISTINCT g) AS genres
+    MATCH (rec:Film)-[:HAS_GENRE]->(g2:Genre)
+    WHERE g2 IN genres AND NOT (a)-[:ACTED_IN]->(rec)
+    RETURN DISTINCT rec.title AS title, rec.year AS year, g2.name AS genre
+    LIMIT 10
+    """
+    with driver.session() as session:
+        result = session.run(query, actor_name=actor_name)
+        return result.data()
+
+#question 29
+def create_director_competition_relationships():
+    query = """
+    MATCH (f1:Film)<-[:DIRECTED]-(d1:Director),
+          (f2:Film)<-[:DIRECTED]-(d2:Director),
+          (f1)-[:HAS_GENRE]->(g:Genre)<-[:HAS_GENRE]-(f2)
+    WHERE f1.year = f2.year AND d1 <> d2
+    MERGE (d1)-[:CONCURRENCE]->(d2)
+    """
+    with driver.session() as session:
+        session.run(query)
+
+#fonction pour afficher les relations des concurrents 
+def get_director_competitions(limit=20):
+    query = """
+    MATCH (d1:Director)-[:CONCURRENCE]->(d2:Director)
+    RETURN d1.name AS source, d2.name AS target
+    LIMIT $limit
+    """
+    with driver.session() as session:
+        results = session.run(query, limit=limit)
+        return [{"source": r["source"], "target": r["target"]} for r in results]
+
+#question 30
+def get_top_director_actor_collaborations(driver, min_collabs=2):
+    query = f"""
+    MATCH (d:Director)-[:DIRECTED]->(f:Film)<-[:ACTED_IN]-(a:Actor)
+    WHERE f.revenue IS NOT NULL AND f.rating IS NOT NULL
+    WITH d.name AS director, a.name AS actor, 
+        COUNT(f) AS collaborations, 
+        AVG(toFloat(f.revenue)) AS avg_revenue, 
+        AVG(toFloat(f.rating)) AS avg_rating
+    WHERE collaborations >= 2
+    RETURN director, actor, collaborations, avg_revenue, avg_rating
+    ORDER BY collaborations DESC
+    LIMIT 10
+    """
+    with driver.session() as session:
+        result = session.run(query, min_collabs=min_collabs)
+        return [record.data() for record in result]
