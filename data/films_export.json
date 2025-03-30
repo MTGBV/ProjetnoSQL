@@ -12,6 +12,11 @@
       "Matt Damon",
       "Jack Nicholson",
       "Mark Wahlberg"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
     ]
   },
   {
@@ -24,9 +29,14 @@
     "director": "Stephen Gaghan",
     "actors": [
       "Matthew McConaughey",
-      "Edgar Ram\u00edrez",
+      "Edgar Ramírez",
       "Bryce Dallas Howard",
       "Corey Stoll"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Thriller"
     ]
   },
   {
@@ -42,6 +52,9 @@
       "James Franco",
       "Tangie Ambrose",
       "Cedric the Entertainer"
+    ],
+    "genres": [
+      "Comedy"
     ]
   },
   {
@@ -57,6 +70,11 @@
       "Chris Pratt",
       "Michael Sheen",
       "Laurence Fishburne"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Romance"
     ]
   },
   {
@@ -72,6 +90,11 @@
       "Diego Luna",
       "Alan Tudyk",
       "Donnie Yen"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -87,6 +110,10 @@
       "Jake Gyllenhaal",
       "Michael Shannon",
       "Aaron Taylor-Johnson"
+    ],
+    "genres": [
+      "Drama",
+      "Thriller"
     ]
   },
   {
@@ -102,6 +129,9 @@
       "Michelle Williams",
       "Kyle Chandler",
       "Lucas Hedges"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -117,6 +147,11 @@
       "Vin Diesel",
       "Bradley Cooper",
       "Zoe Saldana"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -132,6 +167,11 @@
       "John Boyega",
       "Oscar Isaac",
       "Domhnall Gleeson"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -145,8 +185,13 @@
     "actors": [
       "Taraji P. Henson",
       "Octavia Spencer",
-      "Janelle Mon\u00e1e",
+      "Janelle Monáe",
       "Kevin Costner"
+    ],
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
     ]
   },
   {
@@ -162,6 +207,11 @@
       "Michael Fassbender",
       "Jennifer Lawrence",
       "Nicholas Hoult"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -177,6 +227,11 @@
       "Robert Downey Jr.",
       "Scarlett Johansson",
       "Sebastian Stan"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -192,6 +247,11 @@
       "Sam Worthington",
       "Luke Bracey",
       "Teresa Palmer"
+    ],
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
     ]
   },
   {
@@ -207,6 +267,11 @@
       "Iain Glen",
       "Ali Larter",
       "Shawn Roberts"
+    ],
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
     ]
   },
   {
@@ -222,6 +287,11 @@
       "Dwayne Johnson",
       "Rachel House",
       "Temuera Morrison"
+    ],
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -237,6 +307,11 @@
       "Jeff Goldblum",
       "Bill Pullman",
       "Maika Monroe"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -252,6 +327,11 @@
       "Jeremy Renner",
       "Forest Whitaker",
       "Michael Stuhlbarg"
+    ],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Sci-Fi"
     ]
   },
   {
@@ -267,6 +347,11 @@
       "Heath Ledger",
       "Aaron Eckhart",
       "Michael Caine"
+    ],
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
     ]
   },
   {
@@ -282,6 +367,9 @@
       "Shariff Earp",
       "Duan Sanderson",
       "Alex R. Hibbert"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -297,6 +385,11 @@
       "Haley Bennett",
       "Rebecca Ferguson",
       "Justin Theroux"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
     ]
   },
   {
@@ -312,6 +405,9 @@
       "Dominique Abel",
       "Emmanuelle Riva",
       "Pierre Richard"
+    ],
+    "genres": [
+      "Comedy"
     ]
   },
   {
@@ -327,6 +423,11 @@
       "Chris Pratt",
       "Ethan Hawke",
       "Vincent D'Onofrio"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Western"
     ]
   },
   {
@@ -342,6 +443,11 @@
       "Anne Hathaway",
       "Jessica Chastain",
       "Mackenzie Foy"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
     ]
   },
   {
@@ -357,6 +463,11 @@
       "Eric Stonestreet",
       "Kevin Hart",
       "Lake Bell"
+    ],
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -369,9 +480,14 @@
     "director": "Rob Marshall",
     "actors": [
       "Johnny Depp",
-      "Pen\u00e9lope Cruz",
+      "Penélope Cruz",
       "Ian McShane",
       "Geoffrey Rush"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -387,6 +503,10 @@
       "Aaron Eckhart",
       "Laura Linney",
       "Valerie Mahaffey"
+    ],
+    "genres": [
+      "Biography",
+      "Drama"
     ]
   },
   {
@@ -402,6 +522,9 @@
       "Kathryn Hahn",
       "Kristen Bell",
       "Christina Applegate"
+    ],
+    "genres": [
+      "Comedy"
     ]
   },
   {
@@ -411,12 +534,17 @@
     "Votes": 35870,
     "Revenue": "",
     "rating": "unrated",
-    "director": "Andr\u00e9 \u00d8vredal",
+    "director": "André Øvredal",
     "actors": [
       "Brian Cox",
       "Emile Hirsch",
       "Ophelia Lovibond",
       "Michael McElhatton"
+    ],
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
     ]
   },
   {
@@ -432,6 +560,10 @@
       "Tommy Lee Jones",
       "Alicia Vikander",
       "Vincent Cassel"
+    ],
+    "genres": [
+      "Action",
+      "Thriller"
     ]
   },
   {
@@ -447,6 +579,11 @@
       "Justin Timberlake",
       "Zooey Deschanel",
       "Christopher Mintz-Plasse"
+    ],
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -462,6 +599,11 @@
       "Taron Egerton",
       "Samuel L. Jackson",
       "Michael Caine"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -477,6 +619,11 @@
       "Reese Witherspoon",
       "Seth MacFarlane",
       "Scarlett Johansson"
+    ],
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
     ]
   },
   {
@@ -492,6 +639,11 @@
       "Jamie Dornan",
       "Jennifer Ehle",
       "Eloise Mumford"
+    ],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Thriller"
     ]
   },
   {
@@ -507,6 +659,11 @@
       "Theo James",
       "Tobias Menzies",
       "Lara Pulver"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -522,6 +679,10 @@
       "Anya Taylor-Joy",
       "Haley Lu Richardson",
       "Jessica Sula"
+    ],
+    "genres": [
+      "Horror",
+      "Thriller"
     ]
   },
   {
@@ -537,6 +698,11 @@
       "Sam Claflin",
       "Bill Nighy",
       "Jack Huston"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
     ]
   },
   {
@@ -552,6 +718,11 @@
       "Adam Driver",
       "Liam Neeson",
       "Tadanobu Asano"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "History"
     ]
   },
   {
@@ -567,6 +738,9 @@
       "Ayse Howard",
       "Roman Jossart",
       "Nadia White"
+    ],
+    "genres": [
+      "Horror"
     ]
   },
   {
@@ -582,6 +756,11 @@
       "Logan Marshall-Green",
       "Michael Fassbender",
       "Charlize Theron"
+    ],
+    "genres": [
+      "Adventure",
+      "Mystery",
+      "Sci-Fi"
     ]
   },
   {
@@ -597,6 +776,10 @@
       "Jesse Bradford",
       "Jesse Borrego",
       "Lori Petty"
+    ],
+    "genres": [
+      "Horror",
+      "Thriller"
     ]
   },
   {
@@ -612,6 +795,10 @@
       "Kate Hudson",
       "Julia Roberts",
       "Jason Sudeikis"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
     ]
   },
   {
@@ -627,6 +814,11 @@
       "Kurt Russell",
       "Douglas M. Griffin",
       "James DuMont"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Thriller"
     ]
   },
   {
@@ -642,6 +834,11 @@
       "Michelle Monaghan",
       "J.K. Simmons",
       "John Goodman"
+    ],
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
     ]
   },
   {
@@ -657,6 +854,11 @@
       "Marion Cotillard",
       "Jeremy Irons",
       "Brendan Gleeson"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
     ]
   },
   {
@@ -670,8 +872,11 @@
     "actors": [
       "Charlize Theron",
       "Javier Bardem",
-      "Ad\u00e8le Exarchopoulos",
+      "Adèle Exarchopoulos",
       "Jared Harris"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -687,6 +892,11 @@
       "Joseph Gordon-Levitt",
       "Ellen Page",
       "Ken Watanabe"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -702,6 +912,11 @@
       "Paul Walker",
       "Dwayne Johnson",
       "Jason Statham"
+    ],
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
     ]
   },
   {
@@ -717,6 +932,11 @@
       "Katherine Waterston",
       "Alison Sudol",
       "Dan Fogler"
+    ],
+    "genres": [
+      "Adventure",
+      "Family",
+      "Fantasy"
     ]
   },
   {
@@ -732,6 +952,11 @@
       "Michael Nyqvist",
       "Alfie Allen",
       "Willem Dafoe"
+    ],
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
     ]
   },
   {
@@ -747,6 +972,11 @@
       "Kristen Wiig",
       "Jonah Hill",
       "Alistair Abell"
+    ],
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -762,6 +992,10 @@
       "Mark Strong",
       "Gugu Mbatha-Raw",
       "Michael Stuhlbarg"
+    ],
+    "genres": [
+      "Drama",
+      "Thriller"
     ]
   },
   {
@@ -776,7 +1010,11 @@
       "Will Smith",
       "Edward Norton",
       "Kate Winslet",
-      "Michael Pe\u00f1a"
+      "Michael Peña"
+    ],
+    "genres": [
+      "Drama",
+      "Romance"
     ]
   },
   {
@@ -792,6 +1030,11 @@
       "Emma Stone",
       "Rosemarie DeWitt",
       "J.K. Simmons"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Music"
     ]
   },
   {
@@ -807,6 +1050,11 @@
       "Kurt Russell",
       "Jennifer Jason Leigh",
       "Walton Goggins"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
     ]
   },
   {
@@ -821,7 +1069,12 @@
       "Brad Pitt",
       "Diane Kruger",
       "Eli Roth",
-      "M\u00e9lanie Laurent"
+      "Mélanie Laurent"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "War"
     ]
   },
   {
@@ -837,6 +1090,11 @@
       "Jared Leto",
       "Margot Robbie",
       "Viola Davis"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -851,7 +1109,12 @@
       "Tom Hardy",
       "Charlize Theron",
       "Nicholas Hoult",
-      "Zo\u00eb Kravitz"
+      "Zoë Kravitz"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -866,7 +1129,11 @@
       "Oscar Isaac",
       "Charlotte Le Bon",
       "Christian Bale",
-      "Daniel Gim\u00e9nez Cacho"
+      "Daniel Giménez Cacho"
+    ],
+    "genres": [
+      "Drama",
+      "History"
     ]
   },
   {
@@ -882,6 +1149,10 @@
       "Sigourney Weaver",
       "Felicity Jones",
       "Toby Kebbell"
+    ],
+    "genres": [
+      "Drama",
+      "Fantasy"
     ]
   },
   {
@@ -897,6 +1168,9 @@
       "Andrea Riseborough",
       "Julian Barratt",
       "Kenneth Branagh"
+    ],
+    "genres": [
+      "Comedy"
     ]
   },
   {
@@ -912,6 +1186,11 @@
       "Kristen Wiig",
       "Kate McKinnon",
       "Leslie Jones"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
     ]
   },
   {
@@ -927,6 +1206,11 @@
       "Jonah Hill",
       "Margot Robbie",
       "Matthew McConaughey"
+    ],
+    "genres": [
+      "Biography",
+      "Comedy",
+      "Crime"
     ]
   },
   {
@@ -942,6 +1226,9 @@
       "Viola Davis",
       "Octavia Spencer",
       "Bryce Dallas Howard"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -957,6 +1244,11 @@
       "Jason Bateman",
       "_idris Elba",
       "Jenny Slate"
+    ],
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -969,9 +1261,12 @@
     "director": "Ricardo de Montreuil",
     "actors": [
       "Gabriel Chavarria",
-      "Demi\u00e1n Bichir",
+      "Demián Bichir",
       "Theo Rossi",
       "Tony Revolori"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -987,6 +1282,11 @@
       "Orlando Bloom",
       "Keira Knightley",
       "Jack Davenport"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -998,10 +1298,15 @@
     "rating": "G",
     "director": "Makoto Shinkai",
     "actors": [
-      "Ry\u00fbnosuke Kamiki",
+      "Ryûnosuke Kamiki",
       "Mone Kamishiraishi",
-      "Ry\u00f4 Narita",
+      "Ryô Narita",
       "Aoi Yuki"
+    ],
+    "genres": [
+      "Animation",
+      "Drama",
+      "Fantasy"
     ]
   },
   {
@@ -1017,6 +1322,11 @@
       "Rosamund Pike",
       "Neil Patrick Harris",
       "Tyler Perry"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
     ]
   },
   {
@@ -1032,6 +1342,11 @@
       "Jane Levy",
       "Dylan Minnette",
       "Daniel Zovatto"
+    ],
+    "genres": [
+      "Crime",
+      "Horror",
+      "Thriller"
     ]
   },
   {
@@ -1047,6 +1362,10 @@
       "Chris Evans",
       "Scarlett Johansson",
       "Jeremy Renner"
+    ],
+    "genres": [
+      "Action",
+      "Sci-Fi"
     ]
   },
   {
@@ -1062,6 +1381,10 @@
       "Elle Fanning",
       "Brendan Gleeson",
       "Chris Messina"
+    ],
+    "genres": [
+      "Crime",
+      "Drama"
     ]
   },
   {
@@ -1077,6 +1400,11 @@
       "Robert Pattinson",
       "Sienna Miller",
       "Tom Holland"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Biography"
     ]
   },
   {
@@ -1092,6 +1420,11 @@
       "Jason Sudeikis",
       "Austin Stowell",
       "Tim Blake Nelson"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama"
     ]
   },
   {
@@ -1107,6 +1440,11 @@
       "Zoe Saldana",
       "Sigourney Weaver",
       "Michelle Rodriguez"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -1122,6 +1460,10 @@
       "Sam Claflin",
       "Janet McTeer",
       "Charles Dance"
+    ],
+    "genres": [
+      "Drama",
+      "Romance"
     ]
   },
   {
@@ -1137,6 +1479,11 @@
       "Zachary Quinto",
       "Karl Urban",
       "Zoe Saldana"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -1152,6 +1499,11 @@
       "Morena Baccarin",
       "T.J. Miller",
       "Ed Skrein"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
     ]
   },
   {
@@ -1167,6 +1519,11 @@
       "Anna Kendrick",
       "J.K. Simmons",
       "Jon Bernthal"
+    ],
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
     ]
   },
   {
@@ -1182,6 +1539,11 @@
       "Ashleigh Cummings",
       "Stephen Curry",
       "Susie Porter"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Horror"
     ]
   },
   {
@@ -1197,6 +1559,11 @@
       "Miles Teller",
       "Steve Lantz",
       "Gregg Weiner"
+    ],
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama"
     ]
   },
   {
@@ -1212,6 +1579,11 @@
       "Rana Daggubati",
       "Anushka Shetty",
       "Tamannaah Bhatia"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
     ]
   },
   {
@@ -1227,6 +1599,11 @@
       "Paula Patton",
       "Ben Foster",
       "Dominic Cooper"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -1242,6 +1619,11 @@
       "Kenneth Welsh",
       "Daniel Fathers",
       "Kathleen Munroe"
+    ],
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
     ]
   },
   {
@@ -1257,6 +1639,11 @@
       "Chiwetel Ejiofor",
       "Rachel McAdams",
       "Benedict Wong"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -1272,6 +1659,11 @@
       "Tian Jing",
       "Willem Dafoe",
       "Andy Lau"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -1287,6 +1679,10 @@
       "Nicole K_idman",
       "Rooney Mara",
       "Sunny Pawar"
+    ],
+    "genres": [
+      "Biography",
+      "Drama"
     ]
   },
   {
@@ -1302,6 +1698,11 @@
       "Ryan Gosling",
       "Angourie Rice",
       "Matt Bomer"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
     ]
   },
   {
@@ -1317,6 +1718,10 @@
       "Austin Pendleton",
       "Colleen Camp",
       "Neil Flynn"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
     ]
   },
   {
@@ -1332,6 +1737,11 @@
       "Marion Cotillard",
       "Jared Harris",
       "Vincent Ebrahim"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Romance"
     ]
   },
   {
@@ -1347,6 +1757,11 @@
       "Henry Cavill",
       "Amy Adams",
       "Jesse Eisenberg"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -1362,6 +1777,11 @@
       "Nick Offerman",
       "John Carroll Lynch",
       "Linda Cardellini"
+    ],
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
     ]
   },
   {
@@ -1377,6 +1797,11 @@
       "Hugh Jackman",
       "Scarlett Johansson",
       "Michael Caine"
+    ],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Sci-Fi"
     ]
   },
   {
@@ -1392,6 +1817,11 @@
       "Orlando Bloom",
       "Keira Knightley",
       "Geoffrey Rush"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
     ]
   },
   {
@@ -1407,6 +1837,9 @@
       "Jennifer Garner",
       "Beverly D'Angelo",
       "Jason O'Mara"
+    ],
+    "genres": [
+      "Drama"
     ]
   },
   {
@@ -1422,6 +1855,11 @@
       "Addison Timlin",
       "Joely Richardson",
       "Jeremy Irvine"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
     ]
   },
   {
@@ -1437,6 +1875,10 @@
       "George MacKay",
       "Samantha Isler",
       "Annalise Basso"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama"
     ]
   },
   {
@@ -1452,6 +1894,11 @@
       "Jake Gyllenhaal",
       "Viola Davis",
       "Melissa Leo"
+    ],
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
     ]
   },
   {
@@ -1467,6 +1914,11 @@
       "Chris Evans",
       "Mark Ruffalo",
       "Chris Hemsworth"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -1482,6 +1934,11 @@
       "Bryce Dallas Howard",
       "Ty Simpkins",
       "Judy Greer"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ]
   },
   {
@@ -1497,6 +1954,11 @@
       "Lars E_idinger",
       "Sigr_id Bouaziz",
       "Anders Danielsen Lie"
+    ],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
     ]
   }
 ]

@@ -14,6 +14,20 @@ from mongodb.mongo_queries import (
     get_top_10_most_voted_movies,
     get_average_runtime_by_genre
 )
+from neo4j_folder.neo4j_queries import (
+    get_top_actor_by_film_count,
+    get_actors_who_played_with_anne_hathaway,
+    get_top_actor_by_revenue,
+    get_average_votes,
+    get_most_common_genre,
+    get_films_with_my_coactors,
+    get_director_with_most_actors,
+    get_most_connected_films,
+    get_top_actors_by_director_diversity,
+    recommend_films_by_genre,
+    create_influence_relationships,
+    get_shortest_path_between_actors
+)
 import matplotlib.pyplot as plt
 import seaborn as sns
 from mongodb.mongo_connection import get_mongo_connection
@@ -148,6 +162,129 @@ elif menu == "Neo4j":
         st.success("Export MongoDB terminé")
 
     if st.button("Importer dans Neo4j"):
-        from neo4j.neo4j_load import load_data_to_neo4j
+        from neo4j_folder.neo4j_load import load_data_to_neo4j
         load_data_to_neo4j()
         st.success("Import Neo4j terminé")
+
+    #question 14
+    if st.button("Acteur ayant joué dans le plus grand nombre de films"):
+        result = get_top_actor_by_film_count()
+        st.write(f"L'acteur ayant joué dans le plus de films est **{result['actor']}** avec **{result['film_count']}** films.")
+
+    # Question 15 : Acteurs ayant joué avec Anne Hathaway
+    if st.button("Acteurs ayant joué avec Anne Hathaway"):
+        actors = get_actors_who_played_with_anne_hathaway()
+        if actors:
+            st.subheader("Acteurs ayant partagé l'affiche avec Anne Hathaway 🎭")
+            st.write(", ".join(actors))
+        else:
+            st.warning("Aucun acteur trouvé ou Anne Hathaway absente de la base.")
+
+    # Question 16 : Acteur avec les plus gros revenus cumulés
+    if st.button("Acteur avec les plus gros revenus cumulés"):
+        result = get_top_actor_by_revenue()
+        if result:
+            st.write(
+                f"L'acteur ayant généré le plus de revenus est **{result['actor']}** "
+                f"avec un total de **{result['total_revenue']:.2f} millions de dollars**."
+            )
+        else:
+            st.warning("Aucune donnée de revenus disponible.")
+
+    # Question 17 : Moyenne des votes
+    if st.button("Moyenne des votes (Neo4j)"):
+        avg_votes = get_average_votes()
+        if avg_votes:
+            st.success(f"La moyenne des votes des films est **{avg_votes:.2f}**.")
+        else:
+            st.warning("Aucune donnée de vote disponible.")
+
+    # Question 18 : Genre le plus représenté
+    if st.button("Genre le plus représenté"):
+        result = get_most_common_genre()
+        if result:
+            st.info(f"Le genre le plus représenté est **{result['genre']}** avec **{result['occurrence']}** films.")
+        else:
+            st.warning("Aucun genre trouvé dans la base Neo4j.")
+
+    # Question 19 : Films des co-acteurs
+    if st.button("Films joués par les co-acteurs de mon film"):
+        from neo4j_folder.neo4j_queries import get_films_with_my_coactors
+        films = get_films_with_my_coactors("Tanguy Vuillemin") 
+        if films:
+            st.success("🎬 Films dans lesquels les co-acteurs ont également joué avec Tanguy Vuillemin :")
+            for title in films:
+                st.markdown(f"- {title}")
+        else:
+            st.warning("Aucun film trouvé ou nom d'acteur incorrect.")
+
+    # Question 20 : Réalisateur avec le plus d'acteurs distincts
+    if st.button("Réalisateur avec le plus d'acteurs distincts"):
+        from neo4j_folder.neo4j_queries import get_director_with_most_actors
+        result = get_director_with_most_actors()
+        if result:
+            st.info(f"🎬 Le réalisateur **{result['director']}** a travaillé avec **{result['actor_count']}** acteurs différents.")
+        else:
+            st.warning("Aucun résultat trouvé.")
+
+    # Question 21 : Films les plus connectés
+    if st.button("Films les plus connectés (acteurs en commun)"):
+        films = get_most_connected_films()
+        if films:
+            st.subheader("🎞️ Films ayant le plus d'acteurs en commun avec d'autres")
+            for film in films:
+                st.write(f"**{film['film']}** — {film['related_films']} connexions")
+        else:
+            st.warning("Aucune donnée trouvée.")
+
+    # Question 22 : Acteurs avec le plus de réalisateurs différents
+    if st.button("Top 5 acteurs par diversité de réalisateurs"):
+        top_actors = get_top_actors_by_director_diversity()
+        if top_actors:
+            st.subheader("🎭 Acteurs ayant travaillé avec le plus de réalisateurs différents")
+            for actor in top_actors:
+                st.write(f"**{actor['actor']}** — {actor['directors_count']} réalisateurs")
+        else:
+            st.warning("Aucun acteur trouvé.")
+
+    # Question 23 : Recommander un film à un acteur selon ses genres
+    actor_input = st.text_input("Nom de l'acteur pour recommandation de films")
+    if st.button("Recommander un film basé sur les genres"):
+        from neo4j_folder.neo4j_queries import recommend_films_by_genre
+        if actor_input:
+            recommendations = recommend_films_by_genre(actor_input)
+            if recommendations:
+                st.subheader(f"🎥 Films recommandés pour {actor_input}")
+                for rec in recommendations:
+                    st.write(f"- **{rec['recommended_film']}** (Genres correspondants : {rec['matched_genres']})")
+            else:
+                st.warning("Aucune recommandation trouvée.")
+        else:
+            st.warning("Veuillez entrer un nom d'acteur.")
+
+    # Question 24 : Influences entre réalisateurs
+    if st.button("Créer les relations d'influence entre réalisateurs"):
+        from neo4j_folder.neo4j_queries import create_influence_relationships
+        results = create_influence_relationships()
+        if results:
+            st.subheader("🔁 Relations d'influence créées")
+            for res in results:
+                st.write(f"**{res['from_director']}** → **{res['to_director']}** (Genres partagés : {res['shared_genres']})")
+        else:
+            st.warning("Aucune influence détectée.")
+
+    # Question 25 : Chemin le plus court entre deux acteurs
+    actor1 = st.text_input("Acteur 1")
+    actor2 = st.text_input("Acteur 2")
+
+    if st.button("Trouver le chemin le plus court"):
+        from neo4j_folder.neo4j_queries import get_shortest_path_between_actors
+        if actor1 and actor2:
+            path = get_shortest_path_between_actors(actor1, actor2)
+            if path:
+                st.success(" ➡️  ".join(str(p) if p is not None else "Inconnu" for p in path))
+
+            else:
+                st.warning("Aucun chemin trouvé entre ces deux acteurs.")
+        else:
+            st.warning("Veuillez entrer les deux noms.")

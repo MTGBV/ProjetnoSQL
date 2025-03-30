@@ -19,6 +19,12 @@ def create_film_graph(tx, film):
     rating = film.get("rating", "unrated")
     director = film.get("director", "")
     actors = film.get("actors", [])
+    genres = film.get("genres", [])  # maintenant une liste !
+
+    try:
+        revenue = float(revenue)
+    except:
+        revenue = 0.0
 
     # Création du noeud Film
     tx.run("""
@@ -49,6 +55,15 @@ def create_film_graph(tx, film):
             MATCH (f:Film {id: $id})
             MERGE (a)-[:ACTED_IN]->(f)
         """, actor=actor, id=film_id)
+
+    # Création des genres et relations
+    for genre in genres:
+        tx.run("""
+            MERGE (g:Genre {name: $genre})
+            WITH g
+            MATCH (f:Film {id: $id})
+            MERGE (f)-[:HAS_GENRE]->(g)
+        """, genre=genre, id=film_id)
 
 if __name__ == "__main__":
     load_data_to_neo4j()
